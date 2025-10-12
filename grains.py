@@ -1,0 +1,35 @@
+'''
+There once was a wise servant who saved the life of a prince. The king promised to pay whatever the servant could dream up. Knowing that the king loved chess, the servant told the king he would like to have grains of wheat. One grain on the first square of a chessboard, with the number of grains doubling on each successive square.
+
+Instructions
+Calculate the number of grains of wheat on a chessboard.
+A chessboard has 64 squares. Square 1 has one grain, square 2 has two grains, square 3 has four grains, and so on, doubling each time.
+
+Write code that calculates:
+the number of grains on a given square
+the total number of grains on the chessboard
+
+Exception messages
+Sometimes it is necessary to raise an exception. When you do this, you should always include a meaningful error message to indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. For situations where you know that the error source will be a certain type, you can choose to raise one of the built in error types, but should still include a meaningful message.
+
+This particular exercise requires that you use the raise statement to "throw" a ValueError when the square input is out of range. The tests will only pass if you both raise the exception and include a message with it.
+
+To raise a ValueError with a message, write the message as an argument to the exception type:
+
+# when the square value is not in the acceptable range        
+raise ValueError("square must be between 1 and 64")
+'''
+
+def square(number):
+    # raise error if number is greater than the squares on a chessboard, 64
+    if number <= 0 or number > 64:
+        raise ValueError('square must be between 1 and 64')
+    else:
+        pass
+
+    # return the number of grains on the given square
+    return 1 << (number - 1)
+
+def total():
+    # calculate the total number of grains on the chessboard
+    return (1 << 64) - 1
